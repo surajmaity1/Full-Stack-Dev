@@ -3,10 +3,10 @@ package com.surajmaity1;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 public class Program extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
@@ -18,15 +18,20 @@ public class Program extends HttpServlet{
 		// There are three concept to Transfer data from one Servlet to Another Servlet
 		/*
 		 * 1. Session
-		 * 2. Cookies
+		 * 2. Cookie
 		 * 3. URL rewriting
 		 */
 		
 		
-		// Here we have used Session technique	
-		HttpSession session = req.getSession();
-		session.setAttribute("total", total);
+		// Here we have used Cookie technique	
+		Cookie c = new Cookie("total", total+"");
+		res.addCookie(c);
 		res.sendRedirect("SquareNum");
+		
+		// Here we have used Session technique	
+		// HttpSession session = req.getSession();
+		// session.setAttribute("total", total);
+		// res.sendRedirect("SquareNum");
 		
 		// Here we have used URL REWRITING technique	
 		//res.sendRedirect("SquareNum?total="+total);
