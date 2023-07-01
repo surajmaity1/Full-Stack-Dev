@@ -15,13 +15,26 @@ public class Program extends HttpServlet{
 		int val2 = Integer.parseInt(req.getParameter("num2"));
 		int total = val1 + val2;
 		
+		// This technique called Session Management
+		// There are three concept to Transfer data from one Servlet to Another Servlet
+		/*
+		 * 1. Session
+		 * 2. Cookies
+		 * 3. URL rewriting
+		 */
+		
+		
+		// Here we have used URL REWRITING technique	
+		res.sendRedirect("SquareNum?total="+total);
+		
+		/*
 		req.setAttribute("total", total);
 		
 		RequestDispatcher requestDispatcher = req.getRequestDispatcher("SquareNum");
 		requestDispatcher.forward(req, res);
 		
-//		PrintWriter pw = res.getWriter();
-//		pw.println("Result: " + total);
-		
+		PrintWriter pw = res.getWriter();
+		pw.println("Result: " + total);
+		*/
 	}
 }
