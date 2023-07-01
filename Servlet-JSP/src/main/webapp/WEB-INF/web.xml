@@ -9,4 +9,14 @@
   	<servlet-name>AdditionNumbers</servlet-name>
   	<url-pattern>/addTwoNumbers</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>SquareNumber</servlet-name>
+  	<servlet-class>com.surajmaity1.SquareNumber</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SquareNumber</servlet-name>
+  	<url-pattern>/SquareNum</url-pattern>
+  </servlet-mapping>
 </web-app>
