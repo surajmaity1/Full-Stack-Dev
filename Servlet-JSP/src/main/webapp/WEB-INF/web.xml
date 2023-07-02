@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
   
-  
-  <!-- If diff servlet have diff value, this task will be performed by ServletConfig -->
+  <!--
+If diff servlet have diff value, this task will be performed by ServletConfig 
   <servlet>
   	<servlet-name>App</servlet-name>
   	<servlet-class>com.surajmaity1.Program</servlet-class>
@@ -18,7 +18,8 @@
   	<url-pattern>/app</url-pattern>
   </servlet-mapping>
   
-  <!-- If every servlet want to share same value, this task will be performed by ServletContext -->
+  
+  If every servlet want to share same value, this task will be performed by ServletContext 
   
   <context-param>
   	<param-name>name</param-name>
@@ -29,7 +30,7 @@
   	<param-name>mobile</param-name>
   	<param-value>Redmi</param-value>
   </context-param>
-  
+  -->
   <!-- 
   <servlet>
   	<servlet-name>AdditionNumbers</servlet-name>
