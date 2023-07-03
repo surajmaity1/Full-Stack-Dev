@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SquareNum")
 public class SquareNumber extends HttpServlet{
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		int num = 0;
+		/*
+		 int num = 0;
 		
 		// using Cookie 
 		Cookie c[] = req.getCookies();
@@ -33,9 +34,14 @@ public class SquareNumber extends HttpServlet{
 		// get from URL REWRITING
 		// int num = Integer.parseInt(req.getParameter("total"));
 		
+		
+		
 		PrintWriter pw = res.getWriter();
+		pw.println("<html><body bgcolor='blue'>");
 		pw.println("Square: " + num);
+		pw.println("</body></html>");
 		
 		System.out.println("square num called");
+		*/
 	}
 }

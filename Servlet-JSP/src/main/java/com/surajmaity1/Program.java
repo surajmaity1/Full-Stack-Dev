@@ -1,6 +1,7 @@
 package com.surajmaity1;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,9 +50,18 @@ public class Program extends HttpServlet{
 		
 		
 		// Here we have used Cookie technique	
-		Cookie c = new Cookie("total", total+"");
+		
+		/* Cookie c = new Cookie("total", total+"");
 		res.addCookie(c);
 		res.sendRedirect("SquareNum");
+		*/
+		
+		PrintWriter pw = res.getWriter();
+		pw.println("<html><body bgcolor='black'>");
+		pw.println("Square: " + total);
+		pw.println("</body></html>");
+		
+		System.out.println("square num called");
 		
 		// Here we have used Session technique	
 		// HttpSession session = req.getSession();
