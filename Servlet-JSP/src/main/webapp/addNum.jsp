@@ -1,7 +1,7 @@
 <!-- Directive -->
 <%@page import="java.util.Scanner"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" errorPage="CustomError.jsp"%>
 	
 	<%@ include file="File1.jsp" %>
 <!DOCTYPE html>
@@ -40,5 +40,8 @@
 	<%
 	pageContext.setAttribute("name", "Suraj");
 	%>
+	
+	<!-- Divide by zero -->
+	<% int k = 32/0;  %>
 </body>
 </html>
