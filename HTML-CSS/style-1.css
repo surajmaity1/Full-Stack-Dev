@@ -1,0 +1,189 @@
+body {
+    background-color: whitesmoke; /* color changed */
+    /* background-image: url("https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/iar-afB0QQw/upload/83bafba40cc4d1a65c6f3db06e723c69.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp"); */
+    /* background-position: right top; */
+}
+#welcome {
+    background-color: antiquewhite;
+    opacity: 0.4;
+    border-style: double dashed double dashed;
+    border-width: medium 8px thick 8px;
+    border-color: black black deepskyblue crimson;
+    border-radius: 18px;
+    padding: 10px;
+}
+h2 {
+    height: 69px;
+    width: 50%;
+    background-color: burlywood;
+    text-align: justify;
+}
+h4.headingSelect {
+    background-color: cornflowerblue;
+    color: darkkhaki;
+    border-left: dashed red 3px;
+}
+
+.content_mod {
+    color: blue;
+    border-style: hidden;
+    text-align-last: center;
+}
+
+/*UNIVERSAL SELECTOR*/
+* {
+    color: darkblue;
+}
+
+h4, h5 {
+    color: brown;
+    border-style: outset;
+    outline-style: double;
+    outline-offset: 12px;
+    max-width: 50%;
+    text-align: center;
+}
+
+pre {
+    margin: 50px;
+    /*
+    This above line is same as following -
+    
+    (top and bottom) (right and left)
+    margin: 50px 50px;
+    (top, right, bottom, left)
+    margin: 50px 50px 50px 50px;
+    */
+}
+
+b {
+    font-size: medium;
+    margin-top: 80px;
+}
+b.in_h6 {
+    vertical-align: top;
+}
+p {
+    margin-top: inherit;
+    border-style: dotted;
+}
+
+h6.txt_deco {
+    /* text-decoration-line: underline; */
+    /* text-decoration: line-through; */
+    text-decoration-line: underline overline;
+    text-decoration-color: gold;
+    text-decoration-style: double;
+    text-decoration-thickness: 1px;
+    text-indent: 30px;
+    letter-spacing: 8px;
+    font-style: italic;
+    /* font-style: normal; */
+    /* font-weight: bolder; */
+    font-size: 38px;
+    /* font-size: 10em; */
+
+
+
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* (line-deco, color, style, thick) */
+    /* text-decoration: underline  gold double 23px*/
+}
+
+#txt_mod {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+table, th, td {
+    /* note:display and visibility both are different .... */
+    /* display: none; */
+    /* visibility: none; */
+    border: 1px double;
+    width: 50%;
+    border-radius: 11px;
+}
+
+th {
+    font-size: medium;
+    padding: 18px;
+}
+td {
+    text-align: center;
+}
+td:hover {
+    background-color: wheat;
+}
+
+/* 
+    descendant selector
+h3 b {
+    color: red;
+} */
+
+/* Child selector */
+/* h3 > b {
+    color: red;
+} */
+
+/* adjacent sibling selector */
+/* h3 + b {
+    color: red;
+} */
+
+
+/* general sibling selector */
+h3 ~ b {
+    color: red;
+}
+
+.drop_dwn_btn {
+    background-color: lightskyblue;
+    color: black;
+    font-size: x-large;
+    padding: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 11px;
+}
+
+.drop_dwn_menu {
+    display: none;
+    position: absolute;
+    background-color: lightblue;
+    min-width: 150px;
+    border-radius: 11px;
+
+}
+
+.drop_dwn_menu a {
+    color: black;
+    padding: 13px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 11px;
+}
+
+.drop_dwn_menu a:hover {
+    background-color: bisque;
+
+}
+
+.drop_dwn:hover .drop_dwn_menu {
+    display: block;
+}
+
+.drop_dwn:hover .drop_dwn_btn {
+    background-color: aquamarine;
+}
+
+.drop_dwn {
+    position: relative;
+    display: inline-block;
+}
+
+/* Attribute selector */
+div[class="div_cl"] {
+    color: aquamarine;
+}

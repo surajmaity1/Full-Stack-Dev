@@ -7,7 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%= "It is in File1.jsp" %>
-	<br>
+	<%
+	String name = request.getAttribute("name").toString();
+	out.println("Good Day, " +name);
+	%>
+	
+	<!-- Expression Language -->
+	${name}
 </body>
 </html>
