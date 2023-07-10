@@ -1,10 +1,8 @@
 package com.surajmaity1;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,22 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 public class Program extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
+		System.out.println("In servlet ...");
+		String id = req.getParameter("id");
+		String name = req.getParameter("name");
 		
-		//String sun = "Suraj";
-		//req.setAttribute("sun", sun);
-//		StudentInfo studentInfo = new StudentInfo(1, "Suraj");
-		
-		
-		List<StudentInfo> si = Arrays.asList(
-				new StudentInfo(1, "A"),
-				new StudentInfo(2, "B"),
-				new StudentInfo(3, "C"),
-				new StudentInfo(4, "D")
-				);
-		req.setAttribute("sudentInfo", si);
-		RequestDispatcher rd = req.getRequestDispatcher("JspFile1.jsp");
-		rd.forward(req, res);
-		
+		PrintWriter pw = res.getWriter();
+		pw.println("Hello "+ name);
 		
 		
 		
@@ -46,6 +34,24 @@ public class Program extends HttpServlet{
 		
 		
 		/*
+		String sun = "Suraj";
+		req.setAttribute("sun", sun);
+		StudentInfo studentInfo = new StudentInfo(1, "Suraj");
+		
+		
+		
+		RequestDispatcher rd = req.getRequestDispatcher("JspFile1.jsp");
+		rd.forward(req, res);
+		
+		List<StudentInfo> si = Arrays.asList(
+				new StudentInfo(1, "A"),
+				new StudentInfo(2, "B"),
+				new StudentInfo(3, "C"),
+				new StudentInfo(4, "D")
+				);
+		req.setAttribute("sudentInfo", si);
+		
+		
 		// JSTL - 
 		String name = "Suraj";
 		req.setAttribute("name", name);
