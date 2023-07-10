@@ -1,12 +1,12 @@
 package com.surajmaity1;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +14,38 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/app")
 public class Program extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		
+		
+		//String sun = "Suraj";
+		//req.setAttribute("sun", sun);
+//		StudentInfo studentInfo = new StudentInfo(1, "Suraj");
+		
+		
+		List<StudentInfo> si = Arrays.asList(
+				new StudentInfo(1, "A"),
+				new StudentInfo(2, "B"),
+				new StudentInfo(3, "C"),
+				new StudentInfo(4, "D")
+				);
+		req.setAttribute("sudentInfo", si);
+		RequestDispatcher rd = req.getRequestDispatcher("JspFile1.jsp");
+		rd.forward(req, res);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
 		// JSTL - 
 		String name = "Suraj";
 		req.setAttribute("name", name);
@@ -21,7 +53,7 @@ public class Program extends HttpServlet{
 		RequestDispatcher rd = req.getRequestDispatcher("File1.jsp");
 		rd.forward(req, res);
 		
-		/*
+		
 		//  <!-- If diff servlet have diff value, this task will be performed by ServletConfig -->
 		ServletConfig sc = getServletConfig();
 		String str = sc.getInitParameter("name");
