@@ -201,20 +201,88 @@ SELECT first_name ||' '||last_name AS Full_Name, salary
   FROM employees
     WHERE salary < 6000;
 
+-- query to find employees whose first names contain the letters D, S, or N. Sort the result-set in descending order by salary.
+-- https://www.w3resource.com/sql-exercises/sorting-and-filtering-hr/sql-sorting-and-filtering-hr-exercise-17.php
+
+
+-- Note: For example, in PostgreSQL, you can use the ~ operator for regular expression matching:
+
+
+SELECT * FROM employees 
+WHERE first_name ~ 'N|D|S';
+
+SELECT * FROM employees
+WHERE first_name LIKE '%D%' 
+OR first_name LIKE '%S%' 
+OR first_name LIKE '%N%' 
+ORDER BY salary DESC;
+
+-- query to find those employees who worked more than two jobs in the past.
+-- https://www.w3resource.com/sql-exercises/sorting-and-filtering-hr/sql-sorting-and-filtering-hr-exercise-22.php
+
+SELECT employee_id 
+	FROM job_history 
+		GROUP BY employee_id 
+			HAVING COUNT(*) >=2;
+
+-- query to count the number of employees, the sum of all salary, and difference between the highest salary and lowest salaries by each job id.
+-- https://www.w3resource.com/sql-exercises/sorting-and-filtering-hr/sql-sorting-and-filtering-hr-exercise-23.php
+
+SELECT job_id, count(*),SUM(salary), 
+MAX(salary) - MIN(salary) AS "Salary Diff"
+FROM employees
+	GROUP BY job_id;
+
+-- query to find each job ids where two or more employees worked for more than 300 days. 
+-- https://www.w3resource.com/sql-exercises/sorting-and-filtering-hr/sql-sorting-and-filtering-hr-exercise-24.php
+SELECT job_id
+FROM job_history
+	WHERE end_date - start_date  > 300
+		GROUP BY job_id
+		HAVING count(*) >= 2;
 
 
 
 
+-- query to count the number of cities in each country.
+-- https://www.w3resource.com/sql-exercises/sorting-and-filtering-hr/sql-sorting-and-filtering-hr-exercise-25.php
+
+SELECT country_id, COUNT(*)
+FROM locations
+	GROUP BY country_id;
+
+-- query to find the departments where any manager manages four or more employees.
+-- https://www.w3resource.com/sql-exercises/sorting-and-filtering-hr/sql-sorting-and-filtering-hr-exercise-30.php
+
+SELECT DISTINCT department_id 
+	FROM employees
+	GROUP BY department_id, manager_id
+	HAVING COUNT(employee_id) >= 4;
+
+-- query to find the departments where more than ten employees receive commissions. Return department id.
+-- https://www.w3resource.com/sql-exercises/sorting-and-filtering-hr/sql-sorting-and-filtering-hr-exercise-31.php
+
+SELECT department_id 
+	FROM employees 
+		WHERE commission_pct IS NOT NULL
+			GROUP BY department_id 
+				HAVING COUNT(commission_pct)>10;
 
 
+-- vip
+-- query to find those employees who have completed their previous jobs. Return employee ID, end_date.
+-- https://www.w3resource.com/sql-exercises/sorting-and-filtering-hr/sql-sorting-and-filtering-hr-exercise-32.php
 
+SELECT employee_id , MAX(end_date)
+FROM job_history
+WHERE employee_id IN (SELECT employee_id
+FROM job_history
+GROUP BY 1
+HAVING COUNT(employee_id) > 1)
+GROUP BY 1;
 
-
-
-
-
-
-
+-- 
+-- 
 
 
 
