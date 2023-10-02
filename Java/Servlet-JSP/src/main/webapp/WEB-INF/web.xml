@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  
+  <!--
+If diff servlet have diff value, this task will be performed by ServletConfig 
+  <servlet>
+  	<servlet-name>App</servlet-name>
+  	<servlet-class>com.surajmaity1.Program</servlet-class>
+  	
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>Sun</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>App</servlet-name>
+  	<url-pattern>/app</url-pattern>
+  </servlet-mapping>
+  
+  
+  If every servlet want to share same value, this task will be performed by ServletContext 
+  
+  <context-param>
+  	<param-name>name</param-name>
+  	<param-value>Suraj</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>mobile</param-name>
+  	<param-value>Redmi</param-value>
+  </context-param>
+  -->
+  <!-- 
+  <servlet>
+  	<servlet-name>AdditionNumbers</servlet-name>
+  	<servlet-class>com.surajmaity1.Program</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>AdditionNumbers</servlet-name>
+  	<url-pattern>/addTwoNumbers</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>SquareNum</servlet-name>
+  	<servlet-class>com.surajmaity1.SquareNumber</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SquareNum</servlet-name>
+  	<url-pattern>/SquareNum</url-pattern>
+  </servlet-mapping>
+   -->
+</web-app>

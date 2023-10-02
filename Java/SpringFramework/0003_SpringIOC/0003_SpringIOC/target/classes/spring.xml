@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+    <!--  Spring Container as a singleton-->
+    <!--Note: only one object will be created as it is singleton -->
+	<!-- <bean id="human" class="com.surajmaity1.springioc.Human" scope="singleton"></bean> -->
+
+	
+    <!--  Spring Container as a prototype-->
+    <!--Note: diff object will be created as it is prototype -->
+    <!-- <bean id="human" class="com.surajmaity1.springioc.Human" scope="prototype"></bean> -->
+    
+    <bean id="human" class="com.surajmaity1.springioc.Human">
+		<property name="age" value="23"></property>
+		<property name="children" ref="children"></property>
+	</bean>
+	
+	<bean id="children" class="com.surajmaity1.springioc.Children">
+	</bean>
+</beans>
