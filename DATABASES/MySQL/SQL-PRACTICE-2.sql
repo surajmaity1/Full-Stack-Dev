@@ -281,10 +281,21 @@ GROUP BY 1
 HAVING COUNT(employee_id) > 1)
 GROUP BY 1;
 
--- 
--- 
 
+--  SQL statement to join the tables salesman, customer and orders so that the same column of each table appears once and only the relational rows are returned.
+-- https://www.w3resource.com/sql-exercises/sql-joins-exercise-7.php
 
+-- The said SQL query that uses the NATURAL JOIN clause to combine rows from three tables: orders, customer, and salesman.
+/*The NATURAL JOIN clause compares all columns of the two joined tables and only returns the rows where the values match.
+The query retrieves all columns from the three tables where the customer_id from the orders table matches the customer_id from the customer table, and the salesman_id from the orders table matches the salesman_id from the salesman table.
+Note that using NATURAL JOIN can be dangerous if the tables have columns with the same name but different meanings, because it could lead to unexpected results.
+*/
+
+-- note below query should not be used in real life
+SELECT * 
+FROM orders 
+NATURAL JOIN customer  
+NATURAL JOIN salesman; 
 
 
 
