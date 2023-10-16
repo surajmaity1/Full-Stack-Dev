@@ -2,8 +2,18 @@ package com.surajmaity1.springdatajpa.users;
 
 
 import jakarta.persistence.*;
+import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "Employee")
+@Table(
+        name = "employee",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name ="emp_email_unique",
+                        columnNames = "emp_email"
+                )
+        }
+)
 public class Employee {
 
     @Id
@@ -13,7 +23,7 @@ public class Employee {
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = SEQUENCE,
             generator = "emp_seq"
     )
     @Column(
@@ -39,17 +49,19 @@ public class Employee {
 
     @Column(
             name = "emp_email",
-            unique = true,
+            nullable = false,
             columnDefinition = "TEXT"
     )
     private String empEmail;
 
-    @Column(name = "emp_dept_no")
+    @Column(
+            name = "emp_dept_no",
+            nullable = false
+    )
     private Integer empDeptNo;
 
-    public Employee(Long empId, String empFirstName, String empLastName,
+    public Employee(String empFirstName, String empLastName,
                     String empEmail, Integer empDeptNo) {
-        this.empId = empId;
         this.empFirstName = empFirstName;
         this.empLastName = empLastName;
         this.empEmail = empEmail;
