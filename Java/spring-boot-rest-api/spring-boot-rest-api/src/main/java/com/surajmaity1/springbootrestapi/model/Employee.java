@@ -1,9 +1,22 @@
 package com.surajmaity1.springbootrestapi.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(
+        name = "emp_info"
+)
 public class Employee {
+
+    @Id
     private String empId;
+
     private String empName;
+
     private String empAddress;
+
     private String empPhNo;
 
     public Employee() {
