@@ -1,11 +1,13 @@
 package com.surajmaity1.springbootrestapi.service.impl;
 
+import com.surajmaity1.springbootrestapi.excep.EmployeeNotFoundException;
 import com.surajmaity1.springbootrestapi.model.Employee;
 import com.surajmaity1.springbootrestapi.repository.EmployeeRepository;
 import com.surajmaity1.springbootrestapi.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -18,7 +20,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getEmployeeDetails(String empId) {
-        return employeeRepository.findById(empId).get();
+        Optional<Employee> employee = employeeRepository.findById(empId);
+        
+        if (employee.isEmpty()) {
+            throw new EmployeeNotFoundException("Employee Not Exist With Given Credentials");
+        }
+        return employee.get();
     }
 
     @Override
