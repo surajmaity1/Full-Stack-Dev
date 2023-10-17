@@ -1,7 +1,10 @@
 package com.surajmaity1.springbootrestapi.controller;
 
 import com.surajmaity1.springbootrestapi.model.Employee;
+import com.surajmaity1.springbootrestapi.response.ResponseHandler;
 import com.surajmaity1.springbootrestapi.service.EmployeeService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +21,12 @@ public class EmployeeController {
 
     // get specific Employee Details by empId
     @GetMapping("{empId}")
-    public Employee getEmployeeDetails(@PathVariable("empId") String empId) {
-        return employeeService.getEmployeeDetails(empId);
+    public ResponseEntity<Object> getEmployeeDetails(@PathVariable("empId") String empId) {
+        return ResponseHandler.responseBuilder(
+                "Provided Employee Info.",
+                HttpStatus.OK,
+                employeeService.getEmployeeDetails(empId)
+        );
     }
 
     // get all Employee Details
