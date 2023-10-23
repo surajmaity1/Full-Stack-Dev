@@ -34,20 +34,25 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public List<Employee> getByEmpName(String empName) {
+        return employeeRepository.findByEmpName(empName);
+    }
+
+    @Override
     public String registerEmployee(Employee employee) {
         employeeRepository.save(employee);
-        return "msg: Employee registered successfully.";
+        return "REGISTERED";
     }
 
     @Override
     public String updateEmployeeDetails(Employee employee) {
         employeeRepository.save(employee);
-        return "msg: Employee updated successfully.";
+        return "UPDATED";
     }
 
     @Override
     public String removeEmployeeDetails(String empId) {
         employeeRepository.deleteById(empId);
-        return "msg: Employee removed successfully.";
+        return "REMOVED";
     }
 }
