@@ -1,5 +1,7 @@
 package com.surajmaity1.springbootrestapi.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,9 +10,11 @@ import jakarta.persistence.Table;
 @Table(
         name = "emp_info"
 )
+@Schema(description = "Employee Information Table")
 public class Employee {
 
     @Id
+    @Schema(description = "Employee ID should be UNIQUE")
     private String empId;
 
     private String empName;

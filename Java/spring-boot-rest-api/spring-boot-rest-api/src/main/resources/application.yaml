@@ -5,5 +5,18 @@ spring:
     password: 123456
 
 
-# JPA SETTINGS
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+
+   #The SQL dialect makes Hibernate generate better SQL for the chosen database
+#  jpa:
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+
+
+  # JPA SETTINGS
   jpa.hibernate.ddl_auto: create
