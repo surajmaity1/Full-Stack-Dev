@@ -20,3 +20,20 @@ spring:
 
   # JPA SETTINGS
   jpa.hibernate.ddl_auto: create
+
+
+# actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health, beans, metrics"
+      base-path: "/employee-management-dashboard"
+  endpoint:
+    health:
+      show-details: always
+
+
+testingService:
+  port: 8082
+  address: 127.0.0.1
