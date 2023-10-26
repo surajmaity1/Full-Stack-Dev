@@ -60,6 +60,9 @@ public class Employee {
     )
     private Integer empDeptNo;
 
+    public Employee() {
+    }
+
     public Employee(String empFirstName, String empLastName,
                     String empEmail, Integer empDeptNo) {
         this.empFirstName = empFirstName;
