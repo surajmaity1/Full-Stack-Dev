@@ -37,3 +37,16 @@ management:
 testingService:
   port: 8082
   address: 127.0.0.1
+
+
+# Enable Debug Logging for specific package
+logging:
+  level:
+    com.surajmaity1.springbootrestapi.controller: DEBUG
+
+
+# Enable Debug Logging for entire project
+# Note: This is not a good idea
+#logging:
+#  level:
+#    root: DEBUG
