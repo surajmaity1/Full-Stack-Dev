@@ -13,7 +13,7 @@ public class DeveloperController {
 
     // define a method for setter injection
     @Autowired
-    public DeveloperController(@Qualifier("javaDeveloper") Developer developer) {
+    public DeveloperController(@Qualifier("jsDevConf") Developer developer) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         this.developer = developer;
     }
