@@ -1,18 +1,26 @@
 package com.surajmaity1.springcore.common;
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Scope;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON) // FOR SINGLETON -> ONE OBJECT WILL BE CREATED
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class JavaDeveloper implements Developer{
     public JavaDeveloper() {
         System.out.println("In constructor: " + getClass().getSimpleName());
     }
 
+    // define our init method
+    @PostConstruct
+    public void buildStartupTask() {
+        System.out.println("In buildStartupTask(): " + getClass().getSimpleName());
+    }
+
+    // define our destroy method
+    @PreDestroy
+    public void buildEndTask() {
+        System.out.println("In buildEndTask(): " + getClass().getSimpleName());
+    }
     @Override
     public String writeCode() {
         return "Write Java Code";
