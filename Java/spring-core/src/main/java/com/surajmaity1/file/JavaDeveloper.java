@@ -1,4 +1,4 @@
-package com.surajmaity1.springcore;
+package com.surajmaity1.file;
 
 import org.springframework.stereotype.Component;
 
