@@ -2,6 +2,7 @@ package com.surajmaity1.springcore.rest;
 
 import com.surajmaity1.springcore.common.Developer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +13,7 @@ public class DeveloperController {
 
     // define a method for setter injection
     @Autowired
-    public void setDeveloper(Developer developer) {
+    public DeveloperController(@Qualifier("reactDeveloper") Developer developer) {
         this.developer = developer;
     }
 
