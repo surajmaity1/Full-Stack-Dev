@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class DeveloperController {
     // define a private field for the dependency
     private Developer developer;
+    private Developer anotherDeveloper;
 
     // define a method for setter injection
     @Autowired
-    public DeveloperController(Developer developer) {
+    public DeveloperController(@Qualifier("javaDeveloper") Developer developer,
+                               @Qualifier("javaDeveloper") Developer anotherDeveloper) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         this.developer = developer;
+        this.anotherDeveloper = anotherDeveloper;
     }
 
     @GetMapping("/code")
@@ -23,4 +26,8 @@ public class DeveloperController {
         return developer.writeCode();
     }
 
+    @GetMapping("/samedeveloper")
+    public String check() {
+        return "Comparing beans: developer == anotherDeveloper, " + (developer == anotherDeveloper);
+    }
 }
