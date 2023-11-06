@@ -13,7 +13,7 @@ public class DeveloperController {
 
     // define a method for setter injection
     @Autowired
-    public DeveloperController(@Qualifier("reactDeveloper") Developer developer) {
+    public DeveloperController(Developer developer) {
         this.developer = developer;
     }
 
